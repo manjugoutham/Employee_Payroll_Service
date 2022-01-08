@@ -44,24 +44,23 @@ public class EmployeePayRollMain {
 
 	public static boolean createfile() {
 
-		File f = new File("C:\\Users\\Goutham\\MyFile.txt");
-		FileWriter myWriter;
+		File file = new File("C:\\Users\\Goutham\\MyFile.txt");
 		try {
-			myWriter = new FileWriter("C:\\Users\\Goutham\\MyFile.txt");
-			myWriter.write("Welcome to java world!");
-			myWriter.close();
+			FileWriter writer = new FileWriter("C:\\Users\\Goutham\\MyFile.txt");
+			writer.write("Welcome to java world!");
+			writer.close();
 			System.out.println("Success");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		if (f.exists()) {
-			f.deleteOnExit();
+		if (file.exists()) {
+			file.deleteOnExit();
 			System.out.println("File has deleted ");
 		} else {
 			try {
-				f.createNewFile();
+				file.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
